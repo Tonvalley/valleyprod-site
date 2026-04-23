@@ -70,20 +70,43 @@
   <div class="video-section">
     <div class="dj-videos">
 
-      <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/ZqMVsdyuyHg?si=dOFss9S9kxBPqXUl"
-          title="DJ Set" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="video-wrap yt-lite" data-id="ZqMVsdyuyHg">
+        <img class="yt-thumb" src="https://img.youtube.com/vi/ZqMVsdyuyHg/maxresdefault.jpg" alt="DJ Set reel">
+        <button class="yt-play" aria-label="Play video">
+          <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg">
+            <path d="M66.5 7.7c-.8-2.9-3.1-5.2-6-6C55.9.4 34 .4 34 .4S12.1.4 7.5 1.7C4.7 2.4 2.3 4.7 1.5 7.7.4 12.3.4 24 .4 24s0 11.7 1.1 16.3c.8 2.9 3.1 5.2 6 6C12.1 47.5 34 47.5 34 47.5s21.9 0 26.5-1.2c2.9-.8 5.2-3.1 6-6 1.1-4.6 1.1-16.3 1.1-16.3s0-11.7-1.1-16.3z" fill="#FF0000"/>
+            <path d="M27.1 34.1L44.5 24 27.1 13.9v20.2z" fill="#fff"/>
+          </svg>
+        </button>
       </div>
 
-      <!-- Replace YOUR_VIDEO_ID with the second YouTube video ID -->
-      <div class="video-wrap">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/HEp59qc1hCA?si=_Phpqp2ydQIgGzxp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="video-wrap yt-lite" data-id="HEp59qc1hCA">
+        <img class="yt-thumb" src="https://img.youtube.com/vi/HEp59qc1hCA/maxresdefault.jpg" alt="DJ Set reel 2">
+        <button class="yt-play" aria-label="Play video">
+          <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg">
+            <path d="M66.5 7.7c-.8-2.9-3.1-5.2-6-6C55.9.4 34 .4 34 .4S12.1.4 7.5 1.7C4.7 2.4 2.3 4.7 1.5 7.7.4 12.3.4 24 .4 24s0 11.7 1.1 16.3c.8 2.9 3.1 5.2 6 6C12.1 47.5 34 47.5 34 47.5s21.9 0 26.5-1.2c2.9-.8 5.2-3.1 6-6 1.1-4.6 1.1-16.3 1.1-16.3s0-11.7-1.1-16.3z" fill="#FF0000"/>
+            <path d="M27.1 34.1L44.5 24 27.1 13.9v20.2z" fill="#fff"/>
+          </svg>
+        </button>
       </div>
 
     </div>
   </div>
+
+  <script>
+    document.querySelectorAll('.yt-lite').forEach(el => {
+      el.addEventListener('click', function () {
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${this.dataset.id}?autoplay=1&rel=0`;
+        iframe.title = 'Valley Prod DJ set';
+        iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+        iframe.allowFullscreen = true;
+        iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;';
+        this.appendChild(iframe);
+        this.classList.add('loaded');
+      });
+    });
+  </script>
 
   <section class="contact-section">
     <h2>Let's Work</h2>

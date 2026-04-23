@@ -125,7 +125,7 @@ nav.scrolled .nav-logo img {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 8rem 2rem 6rem;
+  padding: 8rem 2rem 5rem;
   isolation: isolate;
   overflow: hidden;
 }
@@ -171,44 +171,6 @@ nav.scrolled .nav-logo img {
   margin-top: 0;
 }
 
-.scroll-cue {
-  position: absolute;
-  bottom: 2.25rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 22px;
-  height: 36px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  padding-top: 7px;
-  opacity: 0.7;
-  transition: opacity 0.2s, border-color 0.2s;
-}
-
-.scroll-cue span {
-  width: 2px;
-  height: 7px;
-  background: var(--white);
-  border-radius: 1px;
-  animation: scrollDot 1.8s ease-in-out infinite;
-}
-
-@keyframes scrollDot {
-  0% { opacity: 0; transform: translateY(-4px); }
-  50% { opacity: 1; }
-  100% { opacity: 0; transform: translateY(8px); }
-}
-
-.scroll-cue:hover {
-  opacity: 1;
-  border-color: var(--white);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .scroll-cue span { animation: none; opacity: 1; }
-}
 
 .eyebrow {
   font-size: 0.72rem;
@@ -405,8 +367,7 @@ nav.scrolled .nav-logo img {
   right: -16px;
   width: 130px;
   height: auto;
-  color: var(--white);
-  opacity: 0.07;
+  opacity: 0.18;
   transform: rotate(15deg);
   transition: opacity 0.35s ease, transform 0.35s ease;
   pointer-events: none;
@@ -414,8 +375,58 @@ nav.scrolled .nav-logo img {
 }
 
 .niche-card:hover .niche-icon {
-  opacity: 0.14;
-  transform: rotate(12deg) scale(1.05);
+  opacity: 0.32;
+  transform: rotate(12deg) scale(1.06);
+}
+
+/* Per-card icon colours */
+.niche-card:nth-child(1) .niche-icon { color: #E63946; } /* music — cinematic red */
+.niche-card:nth-child(2) .niche-icon { color: #4A9EDB; } /* corporate — steel blue */
+.niche-card:nth-child(3) .niche-icon { color: #F59E0B; } /* brand — warm amber */
+.niche-card:nth-child(4) .niche-icon { color: #A78BFA; } /* DJ — electric violet */
+
+/* YOUTUBE LITE EMBED */
+.yt-lite {
+  cursor: pointer;
+}
+
+.yt-lite img.yt-thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.yt-lite:hover img.yt-thumb {
+  transform: scale(1.02);
+}
+
+.yt-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 72px;
+  height: auto;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.6));
+  transition: transform 0.2s ease, filter 0.2s ease;
+  z-index: 1;
+}
+
+.yt-play:hover {
+  transform: translate(-50%, -50%) scale(1.12);
+  filter: drop-shadow(0 6px 24px rgba(0,0,0,0.8));
+}
+
+.yt-lite.loaded .yt-thumb,
+.yt-lite.loaded .yt-play {
+  display: none;
 }
 
 
