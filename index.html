@@ -28,6 +28,9 @@
   <meta name="twitter:image" content="https://valleyprod.com/assets/logo.jpg">
 
   <link rel="canonical" href="https://valleyprod.com/">
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="shortcut icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="apple-touch-icon" href="assets/logo.jpg">
   <link rel="stylesheet" href="styles.css">
 
   <!-- Local Business Schema -->
@@ -35,8 +38,11 @@
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://valleyprod.com/#business",
     "name": "Valley Prod",
-    "description": "London-based video production for music videos, corporate events, brand content and DJ sets.",
+    "image": "https://valleyprod.com/assets/logo.jpg",
+    "logo": "https://valleyprod.com/assets/logo.jpg",
+    "description": "London-based video production for music videos, corporate events, brand content, DJ sets, and podcasts.",
     "url": "https://valleyprod.com",
     "email": "valleyprodbusiness@gmail.com",
     "sameAs": ["https://www.instagram.com/valleyprod"],
@@ -45,8 +51,23 @@
       "addressLocality": "London",
       "addressCountry": "GB"
     },
-    "areaServed": "London",
-    "priceRange": "££"
+    "areaServed": {
+      "@type": "City",
+      "name": "London"
+    },
+    "priceRange": "££",
+    "knowsAbout": ["Music Video Production", "Corporate Event Videography", "Brand Video Content", "Social Media Video", "DJ Set Videography", "Podcast Video Production"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Valley Prod Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Music Video Production", "url": "https://valleyprod.com/music-videos" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Corporate Event Videography", "url": "https://valleyprod.com/corporate-events" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand & Social Video", "url": "https://valleyprod.com/brand-social" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "DJ Set Videography", "url": "https://valleyprod.com/dj-sets" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Podcast Video Production", "url": "https://valleyprod.com/podcasts" } }
+      ]
+    }
   }
   </script>
 </head>
@@ -64,34 +85,65 @@
   </nav>
 
   <section class="hero">
-    <p class="eyebrow">Valley Prod &middot; Video Production</p>
-    <h1>We Make<br>Your Vision<br>Move.</h1>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <p class="eyebrow">Valley Prod &middot; London Video Production</p>
+    <h1>We Make<br>Your Vision<br><span class="accent">Move.</span></h1>
     <p>Cinematic video production across music, events, brand content, and more. Built to stop the scroll and elevate your brand.</p>
-    <a href="#work" class="btn-outline">View Work</a>
+    <div class="button-row">
+      <a href="#work" class="btn-primary">View Work</a>
+      <a href="mailto:valleyprodbusiness@gmail.com" class="btn-outline">Start a Project</a>
+    </div>
+    <a href="#work" class="scroll-cue" aria-label="Scroll to work">
+      <span></span>
+    </a>
+  </section>
+
+  <section class="credentials" aria-label="Credentials">
+    <div class="credentials-inner">
+      <div class="cred-item">
+        <div class="cred-num">5</div>
+        <div class="cred-label">Production Niches</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-num">24h</div>
+        <div class="cred-label">Reply Time</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-num">4K</div>
+        <div class="cred-label">Cinematic Quality</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-num">LDN</div>
+        <div class="cred-label">Based in London</div>
+      </div>
+    </div>
   </section>
 
   <section class="niches" id="work">
-    <span class="section-label">What do you need?</span>
+    <div class="section-head">
+      <span class="section-label">Our Work</span>
+      <h2 class="section-title">What do you<br>need made?</h2>
+    </div>
     <div class="niche-grid">
-      <a href="music-videos.html" class="niche-card">
+      <a href="music-videos.html" class="niche-card reveal">
         <div class="niche-num">01</div>
         <h2>Music Videos</h2>
         <p>Cinematic visuals that make your sound impossible to ignore. From concept to final cut.</p>
         <span class="arrow">View Work &rarr;</span>
       </a>
-      <a href="corporate-events.html" class="niche-card">
+      <a href="corporate-events.html" class="niche-card reveal">
         <div class="niche-num">02</div>
         <h2>Corporate Events</h2>
         <p>Professional event coverage that captures the moments and energy that define your brand.</p>
         <span class="arrow">View Work &rarr;</span>
       </a>
-      <a href="brand-social.html" class="niche-card">
+      <a href="brand-social.html" class="niche-card reveal">
         <div class="niche-num">03</div>
         <h2>Brand &amp; Social</h2>
         <p>Short-form video built for the scroll. Content that makes people stop, watch, and buy.</p>
         <span class="arrow">View Work &rarr;</span>
       </a>
-      <a href="dj-sets.html" class="niche-card">
+      <a href="dj-sets.html" class="niche-card reveal">
         <div class="niche-num">04</div>
         <h2>DJ Sets</h2>
         <p>Live energy captured with dynamic multi-angle coverage. Ready for promos and social.</p>
@@ -100,7 +152,8 @@
     </div>
   </section>
 
-  <section class="home-contact">
+  <section class="home-contact reveal">
+    <span class="section-label">Get in touch</span>
     <h2>Let's Build<br>Something</h2>
     <p>Have a project in mind? Reach out and let's talk about making it real.</p>
     <div class="button-row">
@@ -108,6 +161,28 @@
       <a href="https://instagram.com/valleyprod" target="_blank" rel="noopener" class="btn-outline">DM on Instagram</a>
     </div>
   </section>
+
+  <script>
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Shrink nav on scroll
+    const navEl = document.querySelector('nav');
+    const onScroll = () => {
+      if (window.scrollY > 40) navEl.classList.add('scrolled');
+      else navEl.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  </script>
 
   <footer>
     <p>&copy; 2026 Valley Prod. All rights reserved.</p>

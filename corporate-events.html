@@ -28,7 +28,23 @@
   <meta name="twitter:image" content="https://valleyprod.com/assets/logo.jpg">
 
   <link rel="canonical" href="https://valleyprod.com/corporate-events">
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="shortcut icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="apple-touch-icon" href="assets/logo.jpg">
   <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Corporate Event Videography",
+    "name": "Corporate Event Videography London",
+    "description": "Professional corporate event videography in London. Conferences, galas, product launches, networking events — multi-camera coverage and fast-turnaround post.",
+    "provider": { "@type": "LocalBusiness", "name": "Valley Prod", "url": "https://valleyprod.com" },
+    "areaServed": { "@type": "City", "name": "London" },
+    "url": "https://valleyprod.com/corporate-events"
+  }
+  </script>
 </head>
 <body>
 
@@ -60,7 +76,8 @@
          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
     -->
     <div class="video-wrap">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/ogTOyLI5v5c?si=6DWkhtJU1snnQNGL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/ogTOyLI5v5c?si=6DWkhtJU1snnQNGL" title="Valley Prod corporate event reel" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
   </div>
 
   <section class="contact-section">
@@ -114,6 +131,16 @@
       <a href="https://instagram.com/valleyprod" target="_blank" rel="noopener">@valleyprod</a>
     </div>
   </footer>
+
+  <script>
+    const navEl = document.querySelector('nav');
+    const onScroll = () => {
+      if (window.scrollY > 40) navEl.classList.add('scrolled');
+      else navEl.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  </script>
 
 </body>
 </html>

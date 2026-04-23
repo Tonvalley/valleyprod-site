@@ -28,7 +28,23 @@
   <meta name="twitter:image" content="https://valleyprod.com/assets/logo.jpg">
 
   <link rel="canonical" href="https://valleyprod.com/brand-social">
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="shortcut icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="apple-touch-icon" href="assets/logo.jpg">
   <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Brand & Social Media Video Production",
+    "name": "Brand & Social Media Video London",
+    "description": "Short-form video production in London for clothing brands and lifestyle companies. Content that stops the scroll and drives sales.",
+    "provider": { "@type": "LocalBusiness", "name": "Valley Prod", "url": "https://valleyprod.com" },
+    "areaServed": { "@type": "City", "name": "London" },
+    "url": "https://valleyprod.com/brand-social"
+  }
+  </script>
 </head>
 <body>
 
@@ -214,6 +230,14 @@
     modalBackdrop.addEventListener('click', closeModal);
     modalClose.addEventListener('click', closeModal);
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    const navEl = document.querySelector('nav');
+    const onScroll = () => {
+      if (window.scrollY > 40) navEl.classList.add('scrolled');
+      else navEl.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   </script>
 
 </body>
