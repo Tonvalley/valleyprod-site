@@ -273,44 +273,6 @@ nav.scrolled .nav-logo img {
   color: var(--black);
 }
 
-/* CREDENTIALS STRIP */
-.credentials {
-  padding: 2.5rem 3rem;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.credentials-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-}
-
-.cred-item {
-  text-align: center;
-}
-
-.cred-num {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.75rem;
-  line-height: 1;
-  letter-spacing: 0.03em;
-  margin-bottom: 0.35rem;
-  background: linear-gradient(180deg, #ffffff 0%, #b8b8b8 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.cred-label {
-  font-size: 0.65rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gray);
-}
-
 /* SECTION HEADER */
 .section-head {
   margin-bottom: 3rem;
@@ -434,6 +396,26 @@ nav.scrolled .nav-logo img {
   color: var(--light-gray);
   display: inline-block;
   transition: transform 0.25s ease, color 0.25s ease;
+}
+
+/* NICHE ICONS */
+.niche-icon {
+  position: absolute;
+  bottom: -16px;
+  right: -16px;
+  width: 130px;
+  height: auto;
+  color: var(--white);
+  opacity: 0.07;
+  transform: rotate(15deg);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.niche-card:hover .niche-icon {
+  opacity: 0.14;
+  transform: rotate(12deg) scale(1.05);
 }
 
 
@@ -927,10 +909,6 @@ footer p {
     grid-template-columns: 1fr;
   }
 
-  .credentials-inner {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.75rem;
-  }
 }
 
 @media (max-width: 640px) {
@@ -960,14 +938,6 @@ footer p {
   .hero .button-row .btn-outline {
     width: 100%;
     text-align: center;
-  }
-
-  .credentials {
-    padding: 2rem 1.5rem;
-  }
-
-  .cred-num {
-    font-size: 2.25rem;
   }
 
   .niches {
